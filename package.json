@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
+    "@types/jsonwebtoken": "^8.5.9",
     "@types/node": "^18.11.7",
     "mysql2": "^2.3.3",
     "sequelize-cli": "^6.5.2"
@@ -19,6 +20,8 @@
   "dependencies": {
     "@types/sequelize": "^4.28.14",
     "dotenv": "^16.0.3",
+    "joi": "^17.6.4",
+    "jsonwebtoken": "^8.5.1",
     "sequelize": "^6.25.3"
   }
 }

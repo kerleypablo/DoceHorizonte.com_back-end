@@ -1,0 +1,28 @@
+import * as jwt from 'jsonwebtoken'
+import { IUserCredentials } from '../interface/IUser';
+
+const { JWT_SECRET } = process.env;
+
+const config : jwt.SignOptions = {
+  expiresIn: '1d',
+  algorithm: 'HS256',
+};
+
+export default class TokenServices {
+  private jwt = jwt;
+
+  constructor(private jwtconfig?: jwt.SignOptions) {
+    if (!jwtconfig) {
+      this.jwtconfig = config;
+    }
+  }
+
+  public async tokenGenerate(payload: IUserCredentials) {
+    return this.jwt.sign(payload, JWT_SECRET as string, this.jwtconfig);
+  }
+
+  public async tokenAutenticate(token: string) {
+    const verify = this.jwt.decode(token);
+    return verify;
+  }
+}
