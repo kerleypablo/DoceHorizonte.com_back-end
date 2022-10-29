@@ -1,12 +1,12 @@
 import * as express from 'express';
 import * as cors from 'cors';
-import router from './router';
+import router from './src/router/index';
 
 class App {
   public app: express.Express;
 
   constructor() {
-    this.app = express.default();
+    this.app = express();
 
     this.config();
 
@@ -24,7 +24,7 @@ class App {
 
     this.app.use(express.json());
     this.app.use(accessControl);
-    this.app.use(cors.default());
+    this.app.use(cors());
     this.app.use(router);
   }
 
