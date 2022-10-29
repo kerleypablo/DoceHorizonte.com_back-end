@@ -1,4 +1,5 @@
 export interface IUserServices<T> {
     generateToken(login: T): Promise<string>;
-    verifyToken(token: string): Promise< T | boolean>;
+    verifyToken(token: string): Promise<boolean>;
+    getUserByemail(email: string): Promise<T>;
   }
