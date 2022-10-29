@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as cors from 'cors';
-import router from './src/router/index';
+import router from './router';
 
 class App {
   public app: express.Express;
